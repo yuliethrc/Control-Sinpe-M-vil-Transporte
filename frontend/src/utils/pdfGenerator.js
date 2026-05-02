@@ -32,7 +32,7 @@ export const generatePendientesPDF = (pendientes) => {
         new Date(p.date).toLocaleDateString('es-CR'),
         p.guide_number,
         p.client_name,
-        `₡ ${parseFloat(p.amount).toLocaleString('es-CR', { minimumFractionDigits: 2 })}`,
+        `C. ${parseFloat(p.amount).toLocaleString('es-CR', { minimumFractionDigits: 2 })}`,
         p.received_by
       ];
       tableRows.push(rowData);
@@ -63,7 +63,7 @@ export const generatePendientesPDF = (pendientes) => {
 
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
-    doc.text(`Total Pendiente: ₡ ${total.toLocaleString('es-CR', { minimumFractionDigits: 2 })}`, 196, (doc.lastAutoTable ? doc.lastAutoTable.finalY : finalY) + 10, { align: 'right' });
+    doc.text(`Total Pendiente: C. ${total.toLocaleString('es-CR', { minimumFractionDigits: 2 })}`, 196, (doc.lastAutoTable ? doc.lastAutoTable.finalY : finalY) + 10, { align: 'right' });
 
     // Guardar el PDF
     doc.save(`SINPE_Pendientes_${dateStr.replace(/\//g, '-')}.pdf`);
