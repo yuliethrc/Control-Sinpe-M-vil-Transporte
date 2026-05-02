@@ -52,7 +52,7 @@ function PendientesSection({ sinpes, onToggleState }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxHeight: '130px', overflowY: 'auto', paddingRight: '0.5rem' }}>
           {pendientes.map(p => (
             <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'rgba(255,255,255,0.1)', padding: '0.5rem 1rem', borderRadius: '8px', fontSize: '0.9rem' }}>
-              <span><strong>Guía:</strong> {p.guide_number}</span>
+              <span><strong>Cliente:</strong> {p.client_name}</span>
               <span><strong>Monto:</strong> ₡ {parseFloat(p.amount).toLocaleString('es-CR', { minimumFractionDigits: 2 })}</span>
               <button 
                 className="btn btn-sm" 
